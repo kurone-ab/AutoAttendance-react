@@ -3,5 +3,5 @@ import {Agent} from 'https'
 
 export const AxiosInstance = Axios.create({
     withCredentials: true,
-    baseURL: "http://3.35.0.42:8080/"
+    baseURL: "https://3.35.0.42:8080/"
 })
