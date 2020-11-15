@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
+import { icons } from './assets/icons'
+import {Provider} from "react-redux";
+import store from "./store";
+
+React.icons = icons
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
