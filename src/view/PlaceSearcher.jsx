@@ -52,19 +52,14 @@ const PlaceSearcher = ({search, updatePlaces, places = [], history}) => {
     }, [])
 
     const searchFromRestAPI = () => {
-        const invalidSearchNodes = document.querySelectorAll('input:invalid')
-        for (let invalidSearchNode of invalidSearchNodes) {
-            console.log(invalidSearchNode.style.borderColor)
+        const invalidSearchNode = document.querySelector('#selectedDate:invalid')
+        if (invalidSearchNode) {
             invalidSearchNode.style.borderColor = 'red'
-        }
-        if (invalidSearchNodes.length > 0) {
             setOpen(true);
             return
         }
-        const validSearchNodes = document.querySelectorAll('input:valid')
-        for (let validSearchNode of validSearchNodes) {
-            validSearchNode.style.borderColor = ''
-        }
+        const validSearchNode = document.querySelector('#selectedDate')
+        validSearchNode.style.borderColor = ''
 
         if (!selectedSearch) {setOpen(true); return}
 
